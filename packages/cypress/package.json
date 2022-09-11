@@ -1,0 +1,10 @@
+{
+  "name": "@bull-board/cypress",
+  "version": "0.1.0",
+  "scripts": {
+    "cypress:open": "cypress open --browser chrome --config-file cypress.config.ts"
+  },
+  "devDependencies": {
+    "cypress": "^10.7.0"
+  }
+}

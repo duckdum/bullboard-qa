@@ -1,0 +1,96 @@
+{
+    "queues": [
+        {
+            "name": "testQueue",
+            "counts": {
+                "active": 0,
+                "completed": 11,
+                "delayed": 0,
+                "failed": 3,
+                "paused": 0,
+                "waiting": 0
+            },
+            "jobs": [
+                {
+                    "id": "11",
+                    "timestamp": 1662821779690,
+                    "processedOn": 1662821802227,
+                    "finishedOn": 1662821817956,
+                    "progress": 33,
+                    "attempts": 1,
+                    "delay": 0,
+                    "failedReason": "Random error 11",
+                    "stacktrace": [
+                        "Error: Random error 11\n    at Worker.bullmq_1.Worker.connection [as processFn] (/Code/bull-board/example.ts:48:44)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at Worker.processJob (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:596:22)\n    at Worker.retryIfFailed (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:726:16)\n    at Worker.run (/bull-board/node_modules/bullmq/src/classes/worker.ts:352:34)"
+                    ],
+                    "opts": {
+                        "attempts": 0,
+                        "delay": 0
+                    },
+                    "data": {
+                        "title": "Job 11"
+                    },
+                    "name": "Add 11",
+                    "returnValue": null,
+                    "isFailed": true
+                },
+                {
+                    "id": "12",
+                    "timestamp": 1662821775903,
+                    "processedOn": 1662821797430,
+                    "finishedOn": 1662821802226,
+                    "progress": 8,
+                    "attempts": 1,
+                    "delay": 0,
+                    "failedReason": "Random error 12",
+                    "stacktrace": [
+                        "Error: Random error 12\n    at Worker.bullmq_1.Worker.connection [as processFn] (/bull-board/example.ts:48:44)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at Worker.processJob (/bull-board/node_modules/bullmq/src/classes/worker.ts:596:22)\n    at Worker.retryIfFailed (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:726:16)\n    at Worker.run (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:352:34)"
+                    ],
+                    "opts": {
+                        "attempts": 0,
+                        "delay": 0
+                    },
+                    "data": {
+                        "title": "Job 12"
+                    },
+                    "name": "Add 12",
+                    "returnValue": null,
+                    "isFailed": true
+                },
+                {
+                    "id": "13",
+                    "timestamp": 1662821754243,
+                    "processedOn": 1662821793836,
+                    "finishedOn": 1662821797428,
+                    "progress": 4,
+                    "attempts": 1,
+                    "delay": 0,
+                    "failedReason": "Random error 13",
+                    "stacktrace": [
+                        "Error: Random error 13\n    at Worker.bullmq_1.Worker.connection [as processFn] (/bull-board/example.ts:48:44)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at Worker.processJob (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:596:22)\n    at Worker.retryIfFailed (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:726:16)\n    at Worker.run (/Code/bull-board/node_modules/bullmq/src/classes/worker.ts:352:34)"
+                    ],
+                    "opts": {
+                        "attempts": 0,
+                        "delay": 0
+                    },
+                    "data": {
+                        "title": "Job 13"
+                    },
+                    "name": "Add 13",
+                    "returnValue": null,
+                    "isFailed": true
+                }
+            ],
+            "pagination": {
+                "pageCount": 1,
+                "range": {
+                    "start": 0,
+                    "end": 9
+                }
+            },
+            "readOnlyMode": false,
+            "allowRetries": true,
+            "isPaused": false
+        }
+    ]
+}

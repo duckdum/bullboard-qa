@@ -1,11 +1,9 @@
-import * as Bull from 'bull';
-import Queue3 from 'bull';
-import { Queue as QueueMQ, QueueScheduler, Worker } from 'bullmq';
-import express from 'express';
-import { BullMQAdapter } from '@bull-board/api/src/queueAdapters/bullMQ';
-import { BullAdapter } from '@bull-board/api/src/queueAdapters/bull';
 import { createBullBoard } from '@bull-board/api/src';
+import { BullAdapter } from '@bull-board/api/src/queueAdapters/bull';
 import { ExpressAdapter } from '@bull-board/express/src';
+import Queue3 from 'bull';
+import { QueueScheduler, Worker } from 'bullmq';
+import express from 'express';
 
 const redisOptions = {
   port: 6379,
@@ -13,25 +11,9 @@ const redisOptions = {
   password: '',
 };
 
-const sleep = (t: number) => new Promise((resolve) => setTimeout(resolve, t * 1000));
+const createQueue = (name: string) => new Queue3(name, { redis: redisOptions });
 
-const createQueue3 = (name: string) => new Queue3(name, { redis: redisOptions });
-const createQueueMQ = (name: string) => new QueueMQ(name, { connection: redisOptions });
-
-function setupBullProcessor(bullQueue: Bull.Queue) {
-  bullQueue.process(async (job) => {
-    for (let i = 0; i <= 100; i++) {
-      await sleep(Math.random());
-      await job.progress(i);
-      await job.log(`Processing job at interval ${i}`);
-      if (Math.random() * 200 < 1) throw new Error(`Random error ${i}`);
-    }
-
-    return { jobId: `This is the return value of job (${job.id})` };
-  });
-}
-
-async function setupBullMQProcessor(queueName: string) {
+async function insertJob(queueName: string) {
   const queueScheduler = new QueueScheduler(queueName, {
     connection: redisOptions,
   });
@@ -41,11 +23,8 @@ async function setupBullMQProcessor(queueName: string) {
     queueName,
     async (job) => {
       for (let i = 0; i <= 100; i++) {
-        await sleep(Math.random());
         await job.updateProgress(i);
         await job.log(`Processing job at interval ${i}`);
-
-        if (Math.random() * 200 < 1) throw new Error(`Random error ${i}`);
       }
 
       return { jobId: `This is the return value of job (${job.id})` };
@@ -57,21 +36,14 @@ async function setupBullMQProcessor(queueName: string) {
 const run = async () => {
   const app = express();
 
-  const exampleBull = createQueue3('ExampleBull');
-  const exampleBullMq = createQueueMQ('ExampleBullMQ');
+  const testQueue = createQueue('testQueue');
 
-  await setupBullProcessor(exampleBull); // needed only for example proposes
-  await setupBullMQProcessor(exampleBullMq.name); // needed only for example proposes
+  await insertJob(testQueue.name);
 
-  app.use('/add', (req, res) => {
+  app.use('/job', (req, res) => {
     const opts = req.query.opts || ({} as any);
 
-    if (opts.delay) {
-      opts.delay = +opts.delay * 1000; // delay must be a number
-    }
-
-    exampleBull.add({ title: req.query.title }, opts);
-    exampleBullMq.add('Add', { title: req.query.title }, opts);
+    testQueue.add('Add', { title: req.query.title }, opts);
 
     res.json({
       ok: true,
@@ -82,7 +54,7 @@ const run = async () => {
   serverAdapter.setBasePath('/ui');
 
   createBullBoard({
-    queues: [new BullMQAdapter(exampleBullMq), new BullAdapter(exampleBull)],
+    queues: [new BullAdapter(testQueue)],
     serverAdapter,
   });
 
