@@ -1,0 +1,247 @@
+{
+  "queues": [
+    {
+      "name": "testQueue",
+      "counts": {
+        "active": 0,
+        "completed": 11,
+        "delayed": 0,
+        "failed": 3,
+        "paused": 0,
+        "waiting": 0
+      },
+      "jobs": [
+        {
+          "id": "1",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 1"
+          },
+          "name": "Add 1",
+          "returnValue": {
+            "jobId": "This is the return value of job (1)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "2",
+          "timestamp": 1662821744224,
+          "processedOn": 1662821744226,
+          "finishedOn": 1662821793836,
+          "progress": 50,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 2"
+          },
+          "name": "Add 2",
+          "returnValue": {
+            "jobId": "This is the return value of job (2)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "3",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 3"
+          },
+          "name": "Add 3",
+          "returnValue": {
+            "jobId": "This is the return value of job (3)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "4",
+          "timestamp": 1662821744224,
+          "processedOn": 1662821744226,
+          "finishedOn": 1662821793836,
+          "progress": 50,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 4"
+          },
+          "name": "Add 4",
+          "returnValue": {
+            "jobId": "This is the return value of job (4)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "5",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 5"
+          },
+          "name": "Add 5",
+          "returnValue": {
+            "jobId": "This is the return value of job (5)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "6",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 6"
+          },
+          "name": "Add 6",
+          "returnValue": {
+            "jobId": "This is the return value of job (6)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "7",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 7"
+          },
+          "name": "Add 7",
+          "returnValue": {
+            "jobId": "This is the return value of job (7)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "8",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 8"
+          },
+          "name": "Add 8",
+          "returnValue": {
+            "jobId": "This is the return value of job (8)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "9",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 9"
+          },
+          "name": "Add 9",
+          "returnValue": {
+            "jobId": "This is the return value of job (9)"
+          },
+          "isFailed": false
+        },
+        {
+          "id": "10",
+          "timestamp": 1662821781990,
+          "processedOn": 1662821817957,
+          "finishedOn": 1662821868824,
+          "progress": 100,
+          "attempts": 1,
+          "delay": 0,
+          "stacktrace": [],
+          "opts": {
+            "attempts": 0,
+            "delay": 0
+          },
+          "data": {
+            "title": "Job 10"
+          },
+          "name": "Add 10",
+          "returnValue": {
+            "jobId": "This is the return value of job (10)"
+          },
+          "isFailed": false
+        }
+      ],
+      "pagination": {
+        "pageCount": 2,
+        "range": {
+          "start": 0,
+          "end": 9
+        }
+      },
+      "readOnlyMode": false,
+      "allowRetries": true,
+      "isPaused": false
+    }
+  ]
+}
