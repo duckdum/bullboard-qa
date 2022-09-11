@@ -25,7 +25,9 @@ const greenStatuses = [STATUSES.active, STATUSES.completed];
 export const JobCard = ({ job, status, actions, readOnlyMode, allowRetries }: JobCardProps) => (
   <div className={s.card}>
     <div className={s.sideInfo}>
-      <span title={`#${job.id}`}>#{job.id}</span>
+      <span data-testid="job-title" title={`#${job.id}`}>
+        #{job.id}
+      </span>
       <Timeline job={job} status={status} />
     </div>
     <div className={s.contentWrapper}>
