@@ -1,0 +1,13 @@
+{
+  "name": "@bull-board/cypress",
+  "version": "0.1.0",
+  "scripts": {
+    "cypress:open": "cypress open --browser chrome --config-file cypress.config.ts",
+    "cypress:ci": "npx percy exec -- npx cypress run --browser chrome --config-file cypress.config.ts"
+  },
+  "devDependencies": {
+    "@percy/cli": "^1.10.2",
+    "@percy/cypress": "^3.1.2",
+    "cypress": "^10.7.0"
+  }
+}

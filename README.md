@@ -238,3 +238,5 @@ The ui open automaticlly in the browser at `http://localhost:3000/ui`
 # License
 
 This project is licensed under the [MIT License](https://github.com/felixmosh/bull-board/blob/master/LICENSE), so it means it's completely free to use and copy, but if you do fork this project with nice additions that we could have here, remember to send a PR 👍
+# bullboard-qa
+
